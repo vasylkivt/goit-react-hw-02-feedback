@@ -5,8 +5,6 @@ import Section from 'components/Section/Section';
 import Statistics from 'components/Statistics/Statistics';
 import Notification from 'components/Notification/Notification';
 
-import { Container } from './App.style';
-
 export default class App extends Component {
   state = {
     good: 0,
@@ -14,12 +12,13 @@ export default class App extends Component {
     bad: 0,
   };
 
-  leaveFeedback = option => {
+  leaveFeedback = (event, option) => {
     this.setState(prevState => {
       return {
         [option]: prevState[option] + 1,
       };
     });
+    event.target.blur();
   };
 
   countTotalFeedback() {
@@ -39,10 +38,10 @@ export default class App extends Component {
     const totalFeedback = this.countTotalFeedback();
     const totalPercentage = this.countPositiveFeedbackPercentage() + '%';
     return (
-      <Container>
+      <>
         <Section
-          styles={{ backgroundColor: '#c6fffe' }}
           title="Please leave feedback"
+          // styles={{ backgroundColor: '#cccccc' }}
         >
           <FeedbackOptions
             options={options}
@@ -50,7 +49,10 @@ export default class App extends Component {
           />
         </Section>
 
-        <Section styles={{ backgroundColor: '#fffec6' }} title="Statistics">
+        <Section
+          title="Statistics"
+          // styles={{ backgroundColor: '#c6f6ff' }}
+        >
           {good || neutral || bad ? (
             <Statistics
               good={good}
@@ -63,7 +65,7 @@ export default class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </Container>
+      </>
     );
   }
 }
