@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import { SectionWrap, Title } from './Section.style';
 
-export default function Section({ title, children }) {
+export default function Section({ title, styles, children }) {
   return (
-    <section>
-      <h1>{title}</h1>
+    <SectionWrap stylesss={styles}>
+      <Title>{title}</Title>
       {children}
-    </section>
+    </SectionWrap>
   );
 }
 

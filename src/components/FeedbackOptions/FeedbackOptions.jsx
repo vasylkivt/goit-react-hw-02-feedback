@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-// import { Container } from './FeedbackOptions.style';
+import { Container } from './FeedbackOptions.style';
 
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
-    <div>
+    <Container>
       {options.map(option => (
         <button
           onClick={() => onLeaveFeedback(option)}
@@ -13,7 +13,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
           {option}
         </button>
       ))}
-    </div>
+    </Container>
   );
 }
 

@@ -40,14 +40,17 @@ export default class App extends Component {
     const totalPercentage = this.countPositiveFeedbackPercentage() + '%';
     return (
       <Container>
-        <Section title="Please leave feedback">
+        <Section
+          styles={{ backgroundColor: '#c6fffe' }}
+          title="Please leave feedback"
+        >
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.leaveFeedback}
           />
         </Section>
 
-        <Section title="Statistics">
+        <Section styles={{ backgroundColor: '#fffec6' }} title="Statistics">
           {good || neutral || bad ? (
             <Statistics
               good={good}
