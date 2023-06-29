@@ -12,6 +12,6 @@ export const theme = {
     backgroundColor: '#F8F8F8',
     backgroundColorBtn: '#d5d2d2',
     linearGradient:
-      'linear-gradient(145deg, #F84119 0%, rgba(248, 159, 25, 0.68) 100%)',
+      'radial-gradient(circle at 50% 50%, #F8F8F8 0%, #d5d2d2 100%)',
   },
 };
