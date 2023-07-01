@@ -35,7 +35,7 @@ export const Info = styled.div`
   color: ${({ theme }) => theme.colors.textColor};
   font-weight: 500;
   background: ${({ theme }) => theme.colors.linearGradient};
-  /* border: 1px solid black; */
+
   min-width: 100px;
   border-radius: 50%;
 
@@ -48,7 +48,7 @@ export const Info = styled.div`
 export const PositiveFeedbackWrap = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+
   width: 500px;
   margin: 0 auto;
   gap: 10px;
@@ -68,7 +68,7 @@ export const PositiveFeedbackWrap = styled.div`
     font-weight: 700;
     background-color: ${({ theme, $positivePercentage }) =>
       getBgColor(theme.colors, $positivePercentage)};
-    /* border: 1px solid black; */
+
     max-width: 500px;
 
     width: ${({ $positivePercentage }) => $positivePercentage};
@@ -81,9 +81,6 @@ export const PositiveFeedbackWrap = styled.div`
 
 function getBgColor(color, option) {
   const num = Number.parseInt(option);
-  console.log(color);
-  console.log(num);
-
   if (num > 66) {
     return color.green;
   } else if (num > 33) {

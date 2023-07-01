@@ -53,7 +53,7 @@ export default class App extends Component {
           title="Statistics"
           // styles={{ backgroundColor: '#c6f6ff' }}
         >
-          {good || neutral || bad ? (
+          {totalFeedback ? (
             <Statistics
               good={good}
               neutral={neutral}
