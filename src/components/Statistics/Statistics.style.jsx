@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+const getBgColor = ({ theme, $positivePercentage }) => {
+  const num = Number.parseInt($positivePercentage);
+  if (num > 66) {
+    return theme.colors.green;
+  } else if (num > 33) {
+    return theme.colors.yellow;
+  } else {
+    return theme.colors.red;
+  }
+};
+
 export const StatisticsWrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -66,8 +77,7 @@ export const PositiveFeedbackWrap = styled.div`
     font-size: 25px;
     color: ${({ theme }) => theme.colors.black};
     font-weight: 700;
-    background-color: ${({ theme, $positivePercentage }) =>
-      getBgColor(theme.colors, $positivePercentage)};
+    background-color: ${getBgColor};
 
     max-width: 500px;
 
@@ -78,14 +88,3 @@ export const PositiveFeedbackWrap = styled.div`
     align-items: center;
   }
 `;
-
-function getBgColor(color, option) {
-  const num = Number.parseInt(option);
-  if (num > 66) {
-    return color.green;
-  } else if (num > 33) {
-    return color.yellow;
-  } else {
-    return color.red;
-  }
-}

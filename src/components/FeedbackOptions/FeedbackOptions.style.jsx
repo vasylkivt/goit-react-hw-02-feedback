@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-function getColor(color, option) {
+const getColor = ({ theme, option }) => {
   switch (option) {
     case 'good':
-      return color.green;
+      return theme.colors.green;
     case 'neutral':
-      return color.yellow;
+      return theme.colors.yellow;
     case 'bad':
-      return color.red;
+      return theme.colors.red;
 
     default:
       return '#ededed';
   }
-}
+};
 
 export const ButtonsWrap = styled.div`
   display: flex;
@@ -50,14 +50,14 @@ export const Button = styled.button`
       0px -2px 3px #838383;
 
     font-size: 22px;
-    color: ${({ theme, option }) => getColor(theme.colors, option)};
-    box-shadow: 0px 0px 15px 5px
-      ${({ theme, option }) => getColor(theme.colors, option)};
+    color: ${getColor};
+    /* color: ${({ theme, option }) => getColor(theme.colors, option)}; */
+    box-shadow: 0px 0px 15px 5px ${getColor};
     background: radial-gradient(
       circle at 50% 50%,
       #ffffff 0,
 
-      ${({ theme, option }) => getColor(theme.colors, option)} 100%
+      ${getColor} 100%
     );
   }
 `;
