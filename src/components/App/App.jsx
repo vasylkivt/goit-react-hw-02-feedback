@@ -4,6 +4,7 @@ import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
 import Section from 'components/Section/Section';
 import Statistics from 'components/Statistics/Statistics';
 import Notification from 'components/Notification/Notification';
+import { SectionBtn, SectionStatistics } from './App.style';
 
 export default class App extends Component {
   state = {
@@ -39,20 +40,14 @@ export default class App extends Component {
     const totalPercentage = this.countPositiveFeedbackPercentage() + '%';
     return (
       <>
-        <Section
-          title="Please leave feedback"
-          // styles={{ backgroundColor: '#cccccc' }}
-        >
+        <SectionBtn title="Please leave feedback">
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.leaveFeedback}
           />
-        </Section>
+        </SectionBtn>
 
-        <Section
-          title="Statistics"
-          // styles={{ backgroundColor: '#c6f6ff' }}
-        >
+        <SectionStatistics title="Statistics">
           {totalFeedback ? (
             <Statistics
               good={good}
@@ -64,7 +59,7 @@ export default class App extends Component {
           ) : (
             <Notification message="There is no feedback" />
           )}
-        </Section>
+        </SectionStatistics>
       </>
     );
   }

@@ -2,11 +2,9 @@ import PropTypes from 'prop-types';
 
 import { SectionWrap, SectionTitle, Container } from './Section.style';
 
-export default function Section({ title, /* styles, */ children }) {
+export default function Section({ title, className, children }) {
   return (
-    <SectionWrap
-    // $sectionStyles={styles}
-    >
+    <SectionWrap className={className}>
       <Container>
         <SectionTitle>{title}</SectionTitle>
         {children}
