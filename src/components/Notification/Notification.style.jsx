@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Text = styled.p`
   position: relative;
 
-  /* display: flex; */
   text-align: center;
   width: 500px;
   margin: 0 auto;

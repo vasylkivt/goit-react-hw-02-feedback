@@ -51,7 +51,6 @@ export const Button = styled.button`
 
     font-size: 22px;
     color: ${getColor};
-    /* color: ${({ theme, option }) => getColor(theme.colors, option)}; */
     box-shadow: 0px 0px 15px 5px ${getColor};
     background: radial-gradient(
       circle at 50% 50%,

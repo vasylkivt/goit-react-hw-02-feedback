@@ -1,7 +1,6 @@
 import { Component } from 'react';
 
 import FeedbackOptions from 'components/FeedbackOptions/FeedbackOptions';
-import Section from 'components/Section/Section';
 import Statistics from 'components/Statistics/Statistics';
 import Notification from 'components/Notification/Notification';
 import { SectionBtn, SectionStatistics } from './App.style';

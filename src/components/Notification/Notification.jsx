@@ -17,6 +17,3 @@ export default function Notification({ message, className }) {
 Notification.propTypes = {
   message: PropTypes.string.isRequired,
 };
-
-//PiArrowBendUpRightBold
-//PiArrowBendUpLeftBold
